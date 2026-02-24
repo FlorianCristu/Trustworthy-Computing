@@ -6,18 +6,15 @@ namespace HelloFlorian
     {
         static void Main(string[] args)
         {
-            Console.Write("Hello ");
-
+            System.Console.Write("Hello ");
             string input = Console.ReadLine();
 
-            if (string.IsNullOrEmpty(input))
+            if (string.IsNullOrWhiteSpace(input))
             {
-                Console.WriteLine("World");
+                input = "World";
             }
-            else
-            {
-                Console.WriteLine(input);
-            }
+
+            Console.WriteLine("Hello " + input);
         }
     }
 }
