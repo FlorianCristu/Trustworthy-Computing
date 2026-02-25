@@ -1,16 +1,18 @@
 # Minimal sandbox launcher WITH mapped folder
 
 param(
-    [string]$FilePath
+    [string]$FilePath,
+    [switch]$EnableNetworking
 )
 $HostFolder = Split-Path -Parent $FilePath
 $ExeName = Split-Path -Leaf $FilePath
 $WsbPath = "$PSScriptRoot\SandboxTest.wsb"
+$networkingValue = if ($EnableNetworking) { "Enable" } else { "Disable" }
 
 $wsbContent = @"
 <Configuration>
   <vGPU>Disable</vGPU>
-  <Networking>Disable</Networking>
+  <Networking>$networkingValue</Networking>
 
   <MappedFolders>
     <MappedFolder>
