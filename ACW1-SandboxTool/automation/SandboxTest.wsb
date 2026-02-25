@@ -1,0 +1,17 @@
+﻿<Configuration>
+  <vGPU>Disable</vGPU>
+  <Networking>Disable</Networking>
+
+  <MappedFolders>
+    <MappedFolder>
+      <HostFolder>D:\Master MEng\Trustworthy Computing\Trustworthy-Computing\ACW1-SandboxTool\HelloFlorian\bin\Release\net8.0\publish\win-x64</HostFolder>
+      <SandboxFolder>C:\SandboxApp</SandboxFolder>
+      <ReadOnly>false</ReadOnly>
+    </MappedFolder>
+  </MappedFolders>
+
+  <LogonCommand>
+   <Command>cmd /c cd /d C:\SandboxApp &amp;&amp; HelloFlorian.exe &lt; NUL &gt; auto_output.txt</Command>
+  </LogonCommand>
+
+</Configuration>
